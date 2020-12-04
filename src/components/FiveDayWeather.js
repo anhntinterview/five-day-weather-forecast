@@ -9,7 +9,6 @@ const FiveDayWeather = () => {
     fd = result.data.forecast.forecastday;
     lct = result.data.location;
   }
-  console.log(fd, lct);
   return isLoaded ? (
     <div className="wrapper">
       <div className="city">

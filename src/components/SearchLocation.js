@@ -26,8 +26,6 @@ const SearchLocation = () => {
     setQuery(e.target.value);
   };
 
-  console.log(`query: `, query);
-
   return (
     <>
       <h1>Five days weather forecast</h1>
