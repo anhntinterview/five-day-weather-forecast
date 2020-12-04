@@ -1,6 +1,7 @@
 import FiveDayWeather from './components/FiveDayWeather';
 import SearchLocation from './components/SearchLocation';
 import LocationContextProvider from "./contexts/LocationContext";
+import "./App.css"
 
 function App() {
   return (

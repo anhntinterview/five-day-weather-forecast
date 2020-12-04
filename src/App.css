@@ -1,38 +1,118 @@
+* {
+  margin : 0;
+  padding: 0
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  background-color: #DFE9F5;
+}
+
 .App {
-  text-align: center;
+  padding         : 20px;
+  width           : 700px;
+  height          : 500px;
+  margin          : 0 auto;
+  background-color: #f3f3f3;
+  position        : absolute;
+  top             : 50%;
+  right           : 50%;
+  transform       : translate(50%, -50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-top    : 0;
+  margin-bottom : 15px;
+  text-transform: uppercase;
+  width         : 100%;
+  display       : block;
+  color         : #de354c;
+  font-weight   : bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  color     : #56727C;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h4 {
+  margin-bottom: 10px;
+}
+
+input {
+  padding           : 0.5em;
+  width             : 70%;
+  border-top-color  : transparent;
+  border-right-color: transparent;
+  border-width      : 3px;
+  display           : block;
+  background-color  : #f3f3f3;
+}
+
+input:focus {
+  border-color : transparent;
+  border-radius: 0;
+  color        : #283747;
+}
+
+input::placeholder {
+  color: #283747;
+}
+
+.list {
+  margin: 20px 0;
+}
+
+.list ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.list ul li {
+  margin-top     : 10px;
+  display        : flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-color   : #283747;
+  border-width   : 4px;
+  color          : #283747;
+  padding-right  : 20px;
+  border-left    : 1px solid #ccc;
+  flex-direction : column;
+  flex           : 1 1 0%;
 }
 
-.App-link {
-  color: #61dafb;
+.list ul li .date {
+  border-bottom: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.balance {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.list ul li>div {
+  font-size: 14px;
+  padding  : 10px;
+}
+
+.list ul li label {
+  font-weight: bold;
+}
+
+.empty {
+  width           : 94%;
+  padding         : 20px;
+  text-align      : center;
+  font-size       : 15px;
+  font-weight     : bold;
+  background-color: #ccc;
+  color           : #f3f3f3;
+  text-transform  : uppercase;
+  margin          : 20px auto;
 }
