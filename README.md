@@ -1,6 +1,37 @@
-# Getting Started with Create React App
+# Getting Started with Five Day Weather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project was built by boilderplate: Create React App
+The UI approach includes: 
+- A Text box: for typing the location where display weather data
+- Weather forecast horizontal list : display data weather values in 3 days (I tried to call in the params API 5 days but it had just returned 3 insted of 5. Maybe my account is free limited version)
+The UX:
+- The loading: for waiting while fetching data
+- Avoid multitasking when typing keyword search. The API will be started when the uses stop typing their keyword. The timout waiting is 300 milliseconds
+- The message for case: wrong keywork/no matching location found or empty input already built.
+
+# Overall technical
+The approach code pattern is stateless component. I used to includes below technical:
+- React Hooks,
+- createContext/useContext
+- useReducer
+- useState
+- useEffect 
+Instead of 
+- React Class Component
+- state/props,
+- Redux 
+- And a part of lifecycle React 
+technicals
+
+# Fetching API data from:
+Source: https://api.weatherapi.com
+Direct link: https://api.weatherapi.com/v1/forecast.json?key={account_api_key}&q=${query}&days={number}
+Technical: Axios NPM package 
+# Avoid muiltitasking while typing search input
+Approach technical: setTimeout and clearTimeout
+
+### GIT source: https://github.com/anhntinterview/five-day-weather-forecast.git
+### Deploy web app on: https://nab-interview.herokuapp.com/
 
 ## Available Scripts
 
@@ -39,31 +70,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## `yarn serve`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To test code run on server before true deployment to the Internet
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Testing
+Jest and Enzyme
 
 ### `yarn build` fails to minify
 

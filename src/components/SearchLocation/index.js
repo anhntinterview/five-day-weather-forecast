@@ -27,13 +27,14 @@ const SearchLocation = () => {
   };
 
   return (
-    <div data-testid="value">
+    <div data-testid="search-value">
       <h1>Five days weather forecast</h1>
       <input
         type="text"
         placehodler="typing your city"
         onChange={handleChange}
         value={query}
+        data-testid="input-value"
       />
     </div>
   );

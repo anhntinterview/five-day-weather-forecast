@@ -1,7 +1,9 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import reducers from "../reducers";
 
 export const LocationContext = createContext();
+// for test
+export const useMyContext = () => useContext(LocationContext);
 
 const LocationContextProvider = (props) => {
   const [weatherState, dispatch] = useReducer(reducers, {

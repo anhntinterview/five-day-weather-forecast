@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
-import LocationContextProvider, { LocationContext } from "./LocationContext";
-import { shallow } from "enzyme";
+import LocationContextProvider, {
+  LocationContext,
+  useMyContext,
+} from "./LocationContext";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
 import SearchLocation from "../components/SearchLocation";
 import FiveDayWeather from "../components/FiveDayWeather";
 import { SET_LOCATION } from "../actions";
+
+Enzyme.configure({ adapter: new Adapter() });
 
 const setup = () => {
   const component = shallow(<LocationContextProvider />);
@@ -44,24 +50,48 @@ describe("Location Context Component", () => {
   });
 });
 
-describe("test useReducer", () => {
-  it("state was loaded success", () => {
-    const MockChildComponent = () => {
-      const { weatherState, dispatch } = useContext(LocationContext);
-      dispatch({ type: SET_LOCATION.REQ_LOCATION, params: "hanoi" });
-      const { params, status } = weatherState;
-      return (
-        <div data-testid="value">{status === "pending" ? params : "empty"}</div>
-      );
-    };
-    const wrapper = shallow(
-      <LocationContextProvider>
-        <MockChildComponent />
-      </LocationContextProvider>
-    );
+export const MyComponent = () => {
+  const { myVal } = useMyContext(); // instead of useContext(MyContext)
 
-    expect(
-      wrapper.find(MockChildComponent).shallow().find('[data-testid="value"]')
-    ).toEqual("hanoi");
-  });
+  return <div data-test="my-component">{myVal}</div>;
+};
+
+it("renders the correct text", () => {
+  jest.spyOn(LocationContext, "useMyContext").mockImplementation(() => ({
+    myVal: "foobar",
+  }));
+
+  const wrapper = shallow(
+    <LocationContext.Provider>
+      <MyComponent />
+    </LocationContext.Provider>
+  ).dive();
+  expect(wrapper.text()).toEqual("foobar");
 });
+
+// export const MockChildComponent = () => {
+//   const { weatherState, dispatch } = useNewContext();
+//   dispatch({ type: SET_LOCATION.REQ_LOCATION, params: "hanoi" });
+//   const { params, status } = weatherState;
+//   return (
+//     <div data-testid="value">{status === "pending" ? params : "empty"}</div>
+//   );
+// };
+
+// describe("test useReducer", () => {
+//   it("should keep state value like as params was injected", () => {
+
+//     const wrapper = shallow(
+//       <LocationContextProvider>
+//         <MockChildComponent />
+//       </LocationContextProvider>
+//     );
+
+//     expect(
+//       wrapper
+//         .find(MockChildComponent)
+//         .shallow()
+//         .find('[data-testid="search-value"]')
+//     ).toEqual("hanoi");
+//   });
+// });
