@@ -3,9 +3,9 @@ import React, {
   useContext,
   useEffect,
 } from "react";
-import { LocationContext } from "../contexts/LocationContext";
+import { LocationContext } from "../../contexts/LocationContext";
 import axios from "axios";
-import middleware from "../middleware";
+import middleware from "../../middleware";
 
 const SearchLocation = () => {
   const [query, setQuery] = useState("");
@@ -27,7 +27,7 @@ const SearchLocation = () => {
   };
 
   return (
-    <>
+    <div data-testid="value">
       <h1>Five days weather forecast</h1>
       <input
         type="text"
@@ -35,7 +35,7 @@ const SearchLocation = () => {
         onChange={handleChange}
         value={query}
       />
-    </>
+    </div>
   );
 };
 

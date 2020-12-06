@@ -116,3 +116,8 @@ input::placeholder {
   text-transform  : uppercase;
   margin          : 20px auto;
 }
+
+.empty.error {
+  background-color: rgb(98, 179, 255);
+  color: #ffffff;
+}

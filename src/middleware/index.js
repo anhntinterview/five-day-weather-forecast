@@ -12,7 +12,6 @@ export default async function (query, dispatch, cancelToken) {
     )
     dispatch({ type: SET_LOCATION.REQ_LOCATION_SUCCESS, result })
   } catch (err) {
-    console.error(err)
     axios.isCancel(err) || dispatch({ type: SET_LOCATION.REQ_LOCATION_FAIL, err: err.toJSON().message })
   }
 }

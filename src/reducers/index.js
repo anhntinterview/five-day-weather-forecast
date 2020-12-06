@@ -17,6 +17,7 @@ export default (state, action) => {
         isLoaded: true,
         result: action.result,
         status: "done",
+        err: "none"
       };
     case SET_LOCATION.REQ_LOCATION_FAIL:
       return {

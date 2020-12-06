@@ -9,7 +9,7 @@ const LocationContextProvider = (props) => {
     result: [],
     params: "",
     status: null,
-    err: "",
+    err: null,
   });
 
   return (
