@@ -24,9 +24,9 @@ The approach code pattern is stateless component. I used to includes below techn
 technicals
 
 # Fetching API data from:
-Source: https://api.weatherapi.com
-Direct link: https://api.weatherapi.com/v1/forecast.json?key={account_api_key}&q=${query}&days={number}
-Technical: Axios NPM package 
+- Source: https://api.weatherapi.com,
+- Direct link: https://api.weatherapi.com/v1/forecast.json?key={account_api_key}&q=${query}&days={number},
+- Technical: Axios NPM package.
 # Avoid muiltitasking while typing search input
 Approach technical: setTimeout and clearTimeout
 
