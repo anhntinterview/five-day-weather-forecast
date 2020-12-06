@@ -1,10 +1,10 @@
 # Getting Started with Five Day Weather
 
-The project was built by boilderplate: Create React App
-The UI approach includes: 
+The project was built by boilderplate: Create React App:
+> The UI approach includes: 
 - A Text box: for typing the location where display weather data
 - Weather forecast horizontal list : display data weather values in 3 days (I tried to call in the params API 5 days but it had just returned 3 insted of 5. Maybe my account is free limited version)
-The UX:
+> The UX:
 - The loading: for waiting while fetching data
 - Avoid multitasking when typing keyword search. The API will be started when the uses stop typing their keyword. The timout waiting is 300 milliseconds
 - The message for case: wrong keywork/no matching location found or empty input already built.
