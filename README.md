@@ -16,7 +16,7 @@ The approach code pattern is stateless component. I used to includes below techn
 - useReducer
 - useState
 - useEffect 
-Instead of 
+>>> Instead of 
 - React Class Component
 - state/props,
 - Redux 
