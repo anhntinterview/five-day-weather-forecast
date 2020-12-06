@@ -1,8 +1,6 @@
-import {
-  SET_LOCATION,
-} from "../actions";
+import { SET_LOCATION } from "../actions";
 
-export default (state, action) => {
+export default function reducer(state, action) {
   switch (action.type) {
     case SET_LOCATION.REQ_LOCATION:
       return {
@@ -17,7 +15,7 @@ export default (state, action) => {
         isLoaded: true,
         result: action.result,
         status: "done",
-        err: "none"
+        err: "none",
       };
     case SET_LOCATION.REQ_LOCATION_FAIL:
       return {
@@ -29,4 +27,4 @@ export default (state, action) => {
     default:
       return state;
   }
-};
+}

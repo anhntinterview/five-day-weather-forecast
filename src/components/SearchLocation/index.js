@@ -1,11 +1,8 @@
-import React, {
-  useState,
-  useContext,
-  useEffect,
-} from "react";
-import { LocationContext } from "../../contexts/LocationContext";
+import React, { useState, useContext, useEffect } from "react";
+import LocationContext from "../../contexts/LocationContext";
 import axios from "axios";
 import middleware from "../../middleware";
+import PropTypes from "prop-types";
 
 const SearchLocation = () => {
   const [query, setQuery] = useState("");
@@ -20,24 +17,29 @@ const SearchLocation = () => {
       );
       return () => cancel("No longer latest query") || clearTimeout(timeoutId);
     }
-  }, [query]);
+  }, [dispatch, query]);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
   return (
-    <div data-testid="search-value">
+    <div>
       <h1>Five days weather forecast</h1>
       <input
         type="text"
         placehodler="typing your city"
         onChange={handleChange}
         value={query}
-        data-testid="input-value"
+        data-test="input"
       />
     </div>
   );
 };
 
 export default SearchLocation;
+
+SearchLocation.prototype = {
+  query: PropTypes.string,
+  handleChange: PropTypes.func,
+};

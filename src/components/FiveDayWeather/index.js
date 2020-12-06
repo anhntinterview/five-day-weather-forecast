@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { LocationContext } from "../../contexts/LocationContext";
+import LocationContext from "../../contexts/LocationContext";
+import PropTypes from "prop-types";
 
 const FiveDayWeather = () => {
   const { weatherState } = useContext(LocationContext);
@@ -13,6 +14,7 @@ const FiveDayWeather = () => {
     status === "pending" ? (
       <img
         className="loading-img"
+        alt="loading_img"
         src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/cd514331234507.564a1d2324e4e.gif"
       />
     ) : (
@@ -61,3 +63,8 @@ const FiveDayWeather = () => {
 };
 
 export default FiveDayWeather;
+
+FiveDayWeather.prototype = {
+  lct: PropTypes.object,
+  fd: PropTypes.array
+}

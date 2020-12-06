@@ -1,7 +1,7 @@
 import { SET_LOCATION } from "../actions";
 import axios from "axios";
 
-export default async function (query, dispatch, cancelToken) {
+export default async function middleware(query, dispatch, cancelToken) {
   dispatch({ type: SET_LOCATION.REQ_LOCATION })
   try {
     const result = await axios(
